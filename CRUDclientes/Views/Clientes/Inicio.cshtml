@@ -1,0 +1,66 @@
+﻿@model List<CRUDclientes.Models.proveedor>
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Lista de Proveedores</h4>
+
+            </div>
+            <div class="panel-body">
+                <a class="btn btn-success" href="@Url.Action("Registrar","proveedor")">Registrar Proveedor</a>
+                 <hr />
+                   <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Razon_Social</th>
+                                <th>Sector_Comercial</th>
+                                <th>RUC</th>
+                                <th>Direccion</th>
+                                <th>Telefono</th>
+                                <th>Email</th>
+                                <th>URL</th>
+                                <th style="width:150px"></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                            @foreach (CRUDclientes.Models.proveedor item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Razon_Social</td>
+                                    <td>@item.Sector_Comercial</td>
+                                    <td>@item.RUC</td>
+                                    <td>@item.Direccion</td>
+                                    <td>@item.Telefono</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.URL</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="@Url.Action("Editar","proveedor", new {Id_proveedores = item.Id_Proveedores})">Editar</a>
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Eliminar","proveedor", new {Id_proveedores = item.Id_Proveedores})">Eliminar</a>
+                                    </td>
+
+                                </tr>
+                            }
+                    </table>
+
+
+                    </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+

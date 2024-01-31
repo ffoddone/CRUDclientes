@@ -1,0 +1,61 @@
+﻿@model CRUDclientes.Models.proveedor
+
+@{
+    ViewBag.Title = "Registrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Nuevo Proveedor</h4>
+
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Registrar","proveedor")" method="post">
+                    <div class="form-group">
+                        <label>Razon Social</label>
+                        <input type="text" class="form-control" name="Razon_Social" />
+                    </div>
+                    <div class="form-group">
+                        <label>Sector commercial</label>
+                        <input type="text" class="form-control" name="Sector_Comercial" />
+                    </div>
+                    <div class="form-group">
+                        <label>RUC</label>
+                        <input type="text" class="form-control" name="RUC" />
+                    </div>
+                    <div class="form-group">
+                        <label>Direccion</label>
+                        <input type="text" class="form-control" name="Direccion" />
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input type="text" class="form-control" name="Telefono" />
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="Email" />
+                    </div>
+                    <div class="form-group">
+                        <label>URL</label>
+                        <input type="text" class="form-control" name="URL" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio","proveedor")">Volver</a>
+
+                </form>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+

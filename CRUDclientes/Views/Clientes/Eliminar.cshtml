@@ -1,0 +1,36 @@
+﻿@model CRUDclientes.Models.proveedor
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Eliminar Proveedor</h4>
+
+            </div>
+            <div class="panel-body">
+               <div class="alert alert-danger" >
+                   ¿Desea Eliminar el Proveedor: @Html.DisplayTextFor(m =>m.Razon_Social) @Html.DisplayNameFor(m =>m.Sector_Comercial)
+               </div>
+                <form action="@Url.Action("Eliminar","proveedor")" method="post" >
+                    <input type="text" class="form-control" name="Id_Proveedores" value="@Html.DisplayTextFor(m => m.Id_Proveedores)" />
+                    
+                    <button type="submit" class="btn btn-primary">Eliminar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio","proveedor")">Volver</a>
+                </form>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
